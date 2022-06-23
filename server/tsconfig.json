@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "types": ["@types/jest", "jest", "node"],
+    "target": "es2016",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"]
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./node_modules/**/*", "./**/*.test.ts"]
+}

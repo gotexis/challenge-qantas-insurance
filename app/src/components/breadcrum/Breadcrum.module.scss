@@ -1,0 +1,101 @@
+@import "../../styles/variables";
+
+.breadcrum {
+  background-color: $linkColor;
+  overflow: hidden;
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    position: relative;
+    li {
+      width: 100%;
+      &:not(:first-child) {
+        border-left: 1px solid white;
+      }
+      &:last-child {
+        &.incomplete {
+          &:after {
+            background-color: $linkHoverColor;
+            content: "";
+            display: inline-block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.115s ease-in-out;
+  line-height: 1;
+}
+
+.icon {
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.active {
+  .link {
+    color: white;
+    background-color: $linkColor;
+    cursor: default;
+  }
+}
+
+.completed {
+  .link {
+    color: white;
+    background-color: $linkColor;
+
+    &:hover {
+      background-color: $linkHoverColor;
+      color: white;
+    }
+  }
+  .icon {
+    background: white;
+    path {
+      fill: #00b4c0;
+    }
+  }
+}
+
+.incomplete {
+  .link {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: $linkHoverColor;
+    cursor: default;
+  }
+  .icon {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: $deviceLgMin) {
+  .breadcrum {
+    display: none !important;
+  }
+}

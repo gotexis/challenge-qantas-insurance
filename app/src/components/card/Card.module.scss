@@ -1,0 +1,122 @@
+@import "../../styles/variables";
+
+.intro {
+  text-align: center;
+  h3 {
+    margin: 0 0 5px;
+  }
+  p {
+    color: $lightTextColor;
+    margin: 0 0 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  img {
+    width: 120%;
+    margin: 0 0 -25px -12.5%;
+    display: block;
+  }
+}
+
+.paper {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.countDown {
+  top: -14px;
+  position: relative;
+}
+
+.copy {
+  text-align: center;
+  padding: 0 20px 20px;
+  p {
+    color: $lightTextColor;
+    margin: 0;
+  }
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+
+  strong {
+    font-size: $font-size-xl;
+    font-weight: normal;
+    margin: 0 5px;
+  }
+  svg {
+    margin-top: -4px;
+    path {
+      fill: $linkColor;
+    }
+  }
+}
+
+.countDownOffer {
+  color: $linkColor;
+  margin-bottom: 5px;
+}
+
+.features {
+  border: solid $borderColor;
+  border-width: 1px 0;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding: 0.25rem 2.5rem;
+  }
+
+  svg {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    path {
+      fill: $linkColor;
+    }
+  }
+}
+
+.link {
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin: -3px 0 0 5px;
+    path {
+      fill: $linkColor;
+    }
+  }
+
+  &:hover {
+    svg path {
+      fill: $linkHoverColor;
+    }
+  }
+}
+
+@media (min-width: $deviceMdMin) {
+  .intro {
+    img {
+      margin-bottom: 0;
+    }
+    p + img {
+      margin-top: 30px;
+    }
+  }
+}

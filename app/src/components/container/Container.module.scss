@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.container {
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 500px;
+
+  @media (min-width: $deviceSmMin) {
+    max-width: none;
+  }
+
+  @media (min-width: $deviceLgMin) {
+    max-width: 1150px;
+  }
+}

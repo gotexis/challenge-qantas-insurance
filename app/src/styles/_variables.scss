@@ -1,0 +1,48 @@
+// Colors
+$backgroundColor: #fff !default;
+$textColor: #323232 !default;
+$lightTextColor: #636c72 !default;
+$linkColor: #e40000 !default;
+$linkHoverColor: #990000 !default;
+$actionColor: #bff4f2 !default;
+$borderColor: #e9ebed !default;
+$formBorderColor: #dadada !default;
+
+// Devices
+$deviceXsMin: 0 !default;
+$deviceXsMax: 576px !default;
+$deviceSmMin: 577px !default;
+$deviceSmMax: 768px !default;
+$deviceMdMin: 769px !default;
+$deviceMdMax: 992px !default;
+$deviceLgMin: 993px !default;
+$deviceLgMax: 1200px !default;
+$deviceXlMin: 1201px !default;
+$deviceXlMax: 1440px !default;
+
+// Spacing
+$bodyPaddingSm: 20px !default;
+$bodyPadding: 40px !default;
+
+// Type
+$font-family-base: Ciutadella, -apple-system, BlinkMacSystemFont, Segoe UI,
+  Roboto, Helvetica Neue, Arial, sans-serif;
+$font-size-base: 1rem !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.3 !default;
+
+$font-size-xl: 2.5rem !default;
+$font-size-lg: 1.5rem !default;
+$font-size-sm: 0.85rem !default;
+
+// z-index
+$headerZIndex: 5 !default;
+$sliderBtnsZIndex: 2 !default;
+$bodyZIndex: 1 !default;
+
+// Fixed header
+$fixedHeaderHeight: 70px !default;

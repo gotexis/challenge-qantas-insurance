@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.alert {
+  background-color: #fcebcd;
+  padding: 15px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.msg {
+  flex: 1;
+  margin: 0 15px;
+}

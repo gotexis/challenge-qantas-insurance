@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Financial Details",
+  "description": "FinancialDetails defines a payload, describing customer details for a credit card application.",
+  "type": "object",
+  "required": [
+    "income",
+    "expenses"
+  ],
+  "properties": {
+    "income": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": {
+        "type": "Please enter your income"
+      }
+    },
+    "expenses": {
+      "type": "string",
+      "minLength": 1,
+      "errorMessage": {
+        "type": "Please enter your expenses"
+      }
+    }
+  }
+}

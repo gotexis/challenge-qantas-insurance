@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Personal Details",
+  "description": "PersonalDetails defines a payload, describing customer details for a credit card application.",
+  "type": "object",
+  "required": [
+    "qff",
+    "name",
+    "emailAddress",
+    "dateOfBirth",
+    "nationality"
+  ],
+  "properties": {
+    "qff": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 10,
+      "errorMessage": {
+        "type": "Please enter your QFF Membership number.",
+        "maxLength": "Please enter no more than 40 characters."
+      }
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "pattern": "^[A-Za-z `,.'-]+$",
+      "errorMessage": {
+        "type": "Please enter your first name",
+        "maxLength": "Please enter no more than 40 characters.",
+        "pattern": "Please re-enter using letters, apostrophes and hyphens only."
+      }
+    },
+    "emailAddress": {
+      "type": "string",
+      "format": "email",
+      "minLength": 1,
+      "maxLength": 40,
+      "errorMessage": {
+        "type": "Please enter your email address.",
+        "format": "Please enter a valid email address.",
+        "maxLength": "Please enter no more than 40 characters."
+      }
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "minLength": 10,
+      "maxLength": 10,
+      "errorMessage": {
+        "type": "Please enter your date of birth"
+      }
+    },
+    "nationality": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "errorMessage": {
+        "type": "Please enter your nationality."
+      }
+    }
+  }
+}

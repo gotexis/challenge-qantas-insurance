@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.welcome {
+  padding: $bodyPaddingSm 0;
+}
+
+.intro {
+  text-align: center;
+  p {
+    font-size: $font-size-lg;
+  }
+}
+
+@media (min-width: $deviceMdMin) {
+  .welcome {
+    padding: $bodyPadding 0;
+  }
+}

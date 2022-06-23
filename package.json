@@ -1,0 +1,16 @@
+{
+  "name": "qantas-loyalty-technical-assessment",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "author": "Qantas Airways Ltd (http://www.qantas.com)",
+  "scripts": {
+    "init:env": "cp -n ./app/.env.example ./app/.env || true && cp -n ./server/.env.example ./server/.env || true",
+    "install-all": "npm i && (cd server && npm i) && (cd app && npm i) && (cd mock-api && npm i)",
+    "start": "(cd server && npm start) & (cd app && npm start) & (cd mock-api && npm start)",
+    "test": "(cd server && npm test) && (cd app && npm test)"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.1"
+  }
+}

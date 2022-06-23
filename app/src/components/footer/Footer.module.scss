@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.footer {
+  background-color: #fff;
+  text-align: center;
+
+  p {
+    margin: 20px 0;
+    font-size: $font-size-sm;
+  }
+
+  @media (min-width: $deviceSmMin) {
+    text-align: right;
+  }
+}

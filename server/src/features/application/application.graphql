@@ -1,0 +1,31 @@
+type Mutation {
+  setPersonalDetails(
+    qff: String
+    name: String
+    emailAddress: String
+    dateOfBirth: String
+    nationality: String
+    gender: String
+    applicationId: String
+  ): ApplicationResponse
+  setFinancialDetails(
+    expenses: Float
+    income: Float
+    applicationId: String
+  ): ApplicationResponse
+  confirmDetails(applicationId: String): DefaultMutationResponse
+}
+
+type ApplicationResponse {
+  applicationId: String
+  step: String
+}
+
+type DefaultMutationResponse {
+  applicationId: String
+  success: Boolean
+}
+
+type Query {
+  generateApplicationId: String
+}

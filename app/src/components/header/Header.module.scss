@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.header {
+  background-color: #fff;
+  position: fixed;
+  z-index: $headerZIndex;
+  width: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  top: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: $fixedHeaderHeight;
+}
+
+.logo {
+  padding: 15px 0;
+  display: inline-block;
+}

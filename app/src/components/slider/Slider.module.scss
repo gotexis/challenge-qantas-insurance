@@ -1,0 +1,87 @@
+@import "../../styles/variables";
+
+.slider {
+  padding-top: 15px;
+  position: relative;
+}
+
+.slide {
+  width: auto;
+  padding: 0 15px;
+}
+
+.btnRight,
+.btnLeft {
+  display: none;
+}
+
+@media (max-width: $deviceSmMax) {
+  .container {
+    padding: 0 0 5px;
+    overflow: hidden;
+  }
+  .slide {
+    max-width: 380px;
+    margin: 0 auto;
+
+    &:not(.active) {
+      display: none;
+    }
+  }
+  .btnRight,
+  .btnLeft {
+    position: absolute;
+    top: 195px;
+    z-index: $sliderBtnsZIndex;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    height: 48px;
+    cursor: pointer;
+    display: block;
+
+    path {
+      fill: #4a4a4a;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .btnLeft {
+    left: -1px;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .btnRight {
+    right: -1px;
+    border-radius: 5px 0 0 5px;
+  }
+}
+
+@media (min-width: $deviceMdMin) {
+  .slider {
+    display: flex;
+    justify-content: center;
+    margin: 0 -10px;
+    padding-top: 30px;
+  }
+  .slide {
+    padding: 0 10px;
+    max-width: 480px;
+  }
+}
+
+@media (min-width: $deviceLgMin) {
+  .slider {
+    margin: 0 -20px;
+  }
+
+  .slide {
+    padding: 0 20px;
+  }
+}

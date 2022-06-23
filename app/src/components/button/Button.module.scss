@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  border: 0;
+  vertical-align: middle;
+  user-select: none;
+  border-radius: 5px;
+  transition: all 0.15s ease-in-out;
+  padding: 13px 40px 12px;
+  background-color: $linkColor;
+  outline: none;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 180px;
+
+  &:not(:disabled) {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $linkHoverColor;
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 1;
+  background-color: $formBorderColor;
+  border-color: $formBorderColor;
+  color: $lightTextColor;
+}

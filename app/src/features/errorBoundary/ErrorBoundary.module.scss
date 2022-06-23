@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.error {
+  flex: 1;
+  padding-top: $fixedHeaderHeight;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding-top: $bodyPadding;
+  padding-bottom: $bodyPadding;
+}

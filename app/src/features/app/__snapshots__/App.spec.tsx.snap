@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders the app component 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class=""
+      >
+        <a
+          href="/"
+        >
+          <picture>
+            <source
+              media="(min-width: 575px)"
+              srcset="[object Object]"
+            />
+            <img
+              alt="Qantas Money logo"
+              height="30"
+              src="[object Object]"
+            />
+          </picture>
+        </a>
+      </div>
+    </div>
+    <div />
+    <div>
+      <div
+        class=""
+      >
+        <p>
+          © Qantas Airways Limited ABN 16 009 661 901
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+`;

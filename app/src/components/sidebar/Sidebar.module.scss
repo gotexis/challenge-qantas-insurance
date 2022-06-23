@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.sidebar {
+  max-width: 300px;
+}
+
+@media (max-width: $deviceMdMin) {
+  .sidebar {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}

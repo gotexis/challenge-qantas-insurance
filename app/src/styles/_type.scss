@@ -1,0 +1,81 @@
+@import "./variables";
+
+@font-face {
+  font-family: "Ciutadella";
+  src: url("./fonts/Ciutadella-Medium.woff") format("woff"),
+    url("./fonts/Ciutadella-Medium.ttf") format("truetype"),
+    url("./fonts/Ciutadella-Medium.svg#Ciutadella-Medium") format("svg");
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Ciutadella";
+  src: url("./fonts/Ciutadella-Regular.woff") format("woff"),
+    url("./fonts/Ciutadella-Regular.ttf") format("truetype"),
+    url("./fonts/Ciutadella-Regular.svg#Ciutadella-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+button,
+input,
+select {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: $linkColor;
+
+  &:hover {
+    color: $linkHoverColor;
+  }
+}
+
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.65rem;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: $deviceMdMin) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.85rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
