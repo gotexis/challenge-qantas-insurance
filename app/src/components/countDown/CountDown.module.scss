@@ -1,6 +1,11 @@
 @import "../../styles/variables";
 
+.empty {
+  min-height: 32px;
+}
+
 .countDown {
+  min-height: 32px;
   display: flex;
   align-items: center;
 }

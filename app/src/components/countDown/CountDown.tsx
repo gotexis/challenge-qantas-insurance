@@ -5,7 +5,7 @@ import styles from "./CountDown.module.scss";
 
 function CountDown({ children, className }: { children?: React.ReactNode; className?: string }) {
   if (!children) {
-    return null;
+    return <div className={styles.empty} />;
   }
   return (
     <div className={classnames(styles.countDown, className)}>

@@ -20,6 +20,9 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
     name,
     code,
   } = creditCard;
+
+  const daysLeft = Math.floor((new Date(expiryDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+
   return (
     <article className={styles.card}>
       <div className={styles.inner}>
@@ -29,7 +32,9 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
           <img src={process.env.PUBLIC_URL + `/img/Cards_Angled_${code}.png`} alt="" />
         </div>
         <div className={styles.paper}>
-          <CountDown className={styles.countDown}>{expiryDate}</CountDown>
+          <CountDown className={styles.countDown}>{
+            daysLeft > 0 ? `${daysLeft} days left` : null
+          }</CountDown>
           <div className={styles.copy}>
             <p>Up to</p>
             <div className={styles.points}>
