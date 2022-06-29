@@ -5,6 +5,7 @@ import { ICreditCard } from "../../features/welcome/Welcome.config";
 import { ICON_NAMES, ICON_SIZES } from "../icon/Icon.config";
 import { CountDown, Icon } from "../index";
 import styles from "./Card.module.scss";
+import {countdown} from "../../utils/countdown";
 
 function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLink?: boolean }) {
   const {
@@ -20,6 +21,7 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
     name,
     code,
   } = creditCard;
+
   return (
     <article className={styles.card}>
       <div className={styles.inner}>
@@ -29,7 +31,9 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
           <img src={process.env.PUBLIC_URL + `/img/Cards_Angled_${code}.png`} alt="" />
         </div>
         <div className={styles.paper}>
-          <CountDown className={styles.countDown}>{expiryDate}</CountDown>
+          <CountDown className={styles.countDown}>{
+            countdown(expiryDate)
+          }</CountDown>
           <div className={styles.copy}>
             <p>Up to</p>
             <div className={styles.points}>
