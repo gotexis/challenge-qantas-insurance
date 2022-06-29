@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Button } from "../../../../components";
+import useForm from "../../../../hooks/use-form";
 
 interface IFormProps {
   handleSubmit: (data: IFinancialDetailsFormData) => void;
   disabled: boolean;
-  initalData: IFinancialDetailsFormData;
+  initialData: IFinancialDetailsFormData;
 }
 
 export interface IFinancialDetailsFormData {
@@ -16,23 +17,19 @@ export interface IFinancialDetailsFormData {
 function Form({
   handleSubmit,
   disabled,
-  initalData = {
+  initialData = {
     expenses: 0.0,
     income: 0.0,
   },
 }: IFormProps) {
-  const [formState, setFormState] = useState<IFinancialDetailsFormData>({
-    ...initalData,
-  });
-  const handleInputChange = (event: any): void =>
-    setFormState({
-      ...formState,
-      [event.target.name]: Number(event.target.value),
-    });
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-    handleSubmit(formState);
-  };
+
+  const { formState, handleInputChange, onSubmit } = useForm<IFinancialDetailsFormData>({
+    handleSubmit,
+    initialData,
+    converter: Number
+  })
+
+
   return (
     <form onSubmit={onSubmit}>
       <fieldset disabled={disabled}>
