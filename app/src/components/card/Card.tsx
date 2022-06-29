@@ -5,6 +5,7 @@ import { ICreditCard } from "../../features/welcome/Welcome.config";
 import { ICON_NAMES, ICON_SIZES } from "../icon/Icon.config";
 import { CountDown, Icon } from "../index";
 import styles from "./Card.module.scss";
+import {countdown} from "../../utils/countdown";
 
 function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLink?: boolean }) {
   const {
@@ -21,8 +22,6 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
     code,
   } = creditCard;
 
-  const daysLeft = Math.floor((new Date(expiryDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
-
   return (
     <article className={styles.card}>
       <div className={styles.inner}>
@@ -33,7 +32,7 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
         </div>
         <div className={styles.paper}>
           <CountDown className={styles.countDown}>{
-            daysLeft > 0 ? `${daysLeft} days left` : null
+            countdown(expiryDate)
           }</CountDown>
           <div className={styles.copy}>
             <p>Up to</p>
