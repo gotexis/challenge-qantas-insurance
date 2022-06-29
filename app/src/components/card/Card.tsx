@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { ICreditCard } from "../../features/welcome/Welcome.config";
+import { capitalizeEachWord } from "../../utils/text";
 import { ICON_NAMES, ICON_SIZES } from "../icon/Icon.config";
 import { CountDown, Icon } from "../index";
 import styles from "./Card.module.scss";
@@ -24,7 +25,7 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
     <article className={styles.card}>
       <div className={styles.inner}>
         <div className={styles.intro}>
-          {title && <h3>{title}</h3>}
+          {title && <h3>{capitalizeEachWord(title)}</h3>}
           {name && <p>{name}</p>}
           <img src={process.env.PUBLIC_URL + `/img/Cards_Angled_${code}.png`} alt="" />
         </div>
