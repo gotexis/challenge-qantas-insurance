@@ -5,6 +5,7 @@ import { ICreditCard } from "../../features/welcome/Welcome.config";
 import { ICON_NAMES, ICON_SIZES } from "../icon/Icon.config";
 import { CountDown, Icon } from "../index";
 import styles from "./Card.module.scss";
+import {useClock} from "../../hooks/clock";
 
 function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLink?: boolean }) {
   const {
@@ -20,6 +21,11 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
     name,
     code,
   } = creditCard;
+
+  const { now } = useClock();
+
+  const countdown = Math.floor((new Date(countDownOfferExpiryDate).getTime() - now.getTime()) / 1000);
+
   return (
     <article className={styles.card}>
       <div className={styles.inner}>
@@ -37,14 +43,13 @@ function Card({ creditCard, showLink = true }: { creditCard: ICreditCard; showLi
               <strong>{points.toLocaleString()}</strong>
               <small>PTS</small>
             </div>
-            {/* <div className={styles.countDownOffer}>
+            {countdown > 0 && <div className={styles.countDownOffer}>
               Act quick! Earn an extra{" "}
               <strong>
-                {(new Date(countDownOfferExpiryDate).getTime() - Date.now()) /
-                  1000}
+                {countdown.toLocaleString('en-US')}
               </strong>{" "}
               PTS
-            </div> */}
+            </div>}
             <p>{description}</p>
           </div>
           <ul className={styles.features}>

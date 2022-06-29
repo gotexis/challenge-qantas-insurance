@@ -6,6 +6,7 @@ import { render } from "react-dom";
 import { Loader } from "./components";
 import { Router } from "./features";
 import "./styles/global.scss";
+import {ClockProvider} from "./hooks/clock";
 
 function Root() {
   const [client, setClient] = useState<ApolloClient<any> | undefined>(undefined);
@@ -39,7 +40,9 @@ function Root() {
 
   return (
     <ApolloProvider client={client}>
-      <Router />
+      <ClockProvider>
+        <Router />
+      </ClockProvider>
     </ApolloProvider>
   );
 }
