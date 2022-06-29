@@ -24,7 +24,9 @@ exports[`App renders the app component 1`] = `
         </a>
       </div>
     </div>
-    <div />
+    <div>
+      children
+    </div>
     <div>
       <div
         class=""
