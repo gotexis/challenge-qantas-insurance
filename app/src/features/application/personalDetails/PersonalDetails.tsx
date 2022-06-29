@@ -67,7 +67,7 @@ function PersonalDetails({
             {isLoading ? (
               <Loader>Loading</Loader>
             ) : (
-              <Form handleSubmit={handleSubmit} disabled={mutationLoading} initalData={initData} />
+              <Form handleSubmit={handleSubmit} disabled={mutationLoading} initialData={initData} />
             )}
           </div>
           <Link to="/" className={styles.back}>

@@ -71,7 +71,7 @@ function FinancialDetails({
             {isLoading ? (
               <Loader>Loading</Loader>
             ) : (
-              <Form handleSubmit={handleSubmit} disabled={mutationLoading} initalData={initData} />
+              <Form handleSubmit={handleSubmit} disabled={mutationLoading} initialData={initData} />
             )}
           </div>
           <Link to={`/${creditCardCode}/personal-details/`} className={styles.back}>

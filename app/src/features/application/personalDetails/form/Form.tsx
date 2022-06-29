@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Button } from "../../../../components";
+import useForm from "../../../../hooks/use-form";
 
 interface IFormProps {
   handleSubmit: (data: IPersonalDetailsFormData) => void;
   disabled: boolean;
-  initalData: IPersonalDetailsFormData;
+  initialData: IPersonalDetailsFormData;
 }
 
 export interface IPersonalDetailsFormData {
@@ -20,27 +21,14 @@ export interface IPersonalDetailsFormData {
 function Form({
   handleSubmit,
   disabled,
-  initalData = {
-    qff: "",
-    name: "",
-    emailAddress: "",
-    dateOfBirth: "",
-    nationality: "",
-    gender: "",
-  },
+  initialData
 }: IFormProps) {
-  const [formState, setFormState] = useState<IPersonalDetailsFormData>({
-    ...initalData,
-  });
-  const handleInputChange = (event: any): void =>
-    setFormState({
-      ...formState,
-      [event.target.name]: event.target.value,
-    });
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-    handleSubmit(formState);
-  };
+
+  const { formState, handleInputChange, onSubmit } = useForm<IPersonalDetailsFormData>({
+    handleSubmit,
+    initialData
+  })
+
   return (
     <form onSubmit={onSubmit}>
       <h3>About you</h3>
