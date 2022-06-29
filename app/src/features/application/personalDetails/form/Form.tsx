@@ -95,10 +95,25 @@ function Form({
             <option value="UK">United Kingdom</option>
           </select>
         </div>
-        {/* TODO: convert to radio buttons */}
         <div>
           <label htmlFor="gender">Gender</label>
-          <input name="gender" id="gender" value={formState.gender} onChange={handleInputChange} />
+          <div className="radios">
+            {
+              ["male", "female", "other"].map( i =>
+                <label className="radio" key={i} htmlFor={i}>
+                  <input
+                    id={i}
+                    type="radio"
+                    name="gender"
+                    value={i}
+                    onChange={handleInputChange}
+                    checked={formState.gender === i}
+                  />
+                  {i}
+                </label>)
+            }
+          </div>
+
         </div>
         <Button type="submit" disabled={disabled}>
           Next
