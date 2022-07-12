@@ -31,9 +31,9 @@ Good luck and have fun!
 
 ## 1. Getting started
 
-### 1.1 Create a new private git repo
+### 1.1 Create a new public git repo
 
-Login to your Github account and create a new **private** repo named `qantas-loyalty-technical-assessment`. Unzip our starting files into a new folder and from this folder run the following:
+Login to your Github account and create a new repo named `qantas-loyalty-technical-assessment`. Unzip our starting files into a new folder and from this folder run the following:
 
 ```
 $ git init
@@ -43,7 +43,7 @@ $ git commit -m "Adding Qantas Loyalty technical assessment base files"
 $ git push -u origin master
 ```
 
-_❗️**Important**: Please keep this repo private._
+_❗️**Important**: Please keep this repo public._
 
 ### 1.2. Add local environment variables
 
@@ -323,14 +323,6 @@ _❗️**Important**: Raise one PR for each task. Include a brief summary in the
 <br>
 
 ## 4. Submission
-
-When you have completed your tasks, please add us as contributors to your private repo:
-
-- `jamesalexmorganwork`
-- `riffaud`
-- `marky86`
-- `omalraj`
-- `neginqantas`
 
 Now let your Qantas contact or recruiter know you have finished the assessment. They will communicate the next steps to you.
 
